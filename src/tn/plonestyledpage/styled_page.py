@@ -50,7 +50,7 @@ class View(grok.View):
         return getUniqueId(self.context)
 
     def styles(self):
-        return ('<style type="text/css" media="all">%s</style' %
+        return ('<style type="text/css" media="all">%s</style>' %
                 self.cdata_styles())
 
     def cdata_styles(self):
