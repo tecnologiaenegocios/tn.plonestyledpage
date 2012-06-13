@@ -9,6 +9,14 @@ import cssutils
 import zope.schema
 
 
+def getStyleBlock(page):
+    cdata_block = u"/*<![CDATA[*/%s/*]]>*/" % page.styles
+    return u'<style type="text/css" media="all">%s</style>' % cdata_block
+
+def getEscapedStyleBlock(page):
+    cdata_block = u"/*<![CDATA[*/%s/*]]>*/" % getEscapedStyles(page)
+    return u'<style type="text/css" media="all">%s</style>' % cdata_block
+
 def getEscapedStyles(page):
     id = getUniqueId(page)
     css = cssutils.parseString(page.styles)
@@ -50,11 +58,4 @@ class View(grok.View):
         return getUniqueId(self.context)
 
     def styles(self):
-        return ('<style type="text/css" media="all">%s</style>' %
-                self.cdata_styles())
-
-    def cdata_styles(self):
-        return "/*<![CDATA[*/%s/*]]>*/" % self.escaped_styles()
-
-    def escaped_styles(self):
-        return getEscapedStyles(self.context)
+        return getEscapedStyleBlock(self.context)
