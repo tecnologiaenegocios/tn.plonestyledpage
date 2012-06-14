@@ -24,10 +24,6 @@ def getEscapedStyles(page):
         if not rule.type == CSSRule.STYLE_RULE:
             continue
         for selector in rule.selectorList:
-            namespace, element = selector.element
-            if namespace:
-                # Change only elements within the default namespace.
-                continue
             selector.selectorText = u"#%(id)s %(selector)s" % {
                 'id': id, 'selector': selector.selectorText
             }
