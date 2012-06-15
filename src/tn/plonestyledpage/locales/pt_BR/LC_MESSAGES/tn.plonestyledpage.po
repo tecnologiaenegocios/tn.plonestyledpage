@@ -1,0 +1,35 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-06-15 14:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: tn.plonestyledpage\n"
+
+#: ./styled_page.py:45
+msgid "Additional styles for this page."
+msgstr "Estilos adicionais para esta página."
+
+#: ./styled_page.py:39
+msgid "Page body"
+msgstr "Corpo da página"
+
+#: ./styled_page.py:44
+msgid "Page styles"
+msgstr "Estilos da página"
+
+#: ./styled_page.py:40
+msgid "The contents of the page"
+msgstr "O conteúdo da página"
+

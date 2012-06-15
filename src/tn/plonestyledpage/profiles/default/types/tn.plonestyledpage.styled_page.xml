@@ -6,8 +6,8 @@
     i18n:domain="plone"
     >
 
-  <property name="title" i18n:translate="tn.plonestyledpage-styled-page-title">Styled page</property>
-  <property name="description" i18n:translate="tn.plonestyledpage-styled-page-description">A page which can contain CSS styles</property>
+  <property name="title" i18n:translate="">tn.plonestyledpage-styled-page-title</property>
+  <property name="description" i18n:translate="">tn.plonestyledpage-styled-page-description</property>
   <property name="content_icon">++resource++tn.plonestyledpage/styled-page.png</property>
   <property name="allow_discussion">True</property>
   <property name="global_allow">True</property>
