@@ -10,7 +10,7 @@ import zope.schema
 
 
 def getStyleBlock(page):
-    cdata_block = u"/*<![CDATA[*/%s/*]]>*/" % page.styles
+    cdata_block = u"/*<![CDATA[*/%s/*]]>*/" % (page.styles or u'')
     return u'<style type="text/css" media="all">%s</style>' % cdata_block
 
 def getEscapedStyleBlock(page):
@@ -18,6 +18,8 @@ def getEscapedStyleBlock(page):
     return u'<style type="text/css" media="all">%s</style>' % cdata_block
 
 def getEscapedStyles(page):
+    if not page.styles:
+        return u''
     id = getUniqueId(page)
     css = cssutils.parseString(page.styles)
     for rule in css.cssRules:
