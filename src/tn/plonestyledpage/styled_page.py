@@ -54,6 +54,7 @@ class IStyledPageSchema(form.Schema):
 
 class View(grok.View):
     grok.context(IStyledPageSchema)
+    grok.require('zope2.View')
 
     def id(self):
         return getUniqueId(self.context)
