@@ -1,6 +1,7 @@
 from cssutils.css import CSSRule
 from five import grok
 from plone.app.textfield import RichText
+from plone.dexterity import content
 from plone.directives import form
 from tn.plonestyledpage import _
 from tn.ploneformwidget.sourcecode import SourceCodeFieldWidget
@@ -8,6 +9,7 @@ from zope.keyreference.interfaces import IKeyReference
 from z3c.form import widget
 
 import cssutils
+import zope.interface
 import zope.schema
 
 
@@ -50,6 +52,13 @@ class IStyledPageSchema(form.Schema):
         description=_(u'Additional styles for this page.'),
         required=False
     )
+
+
+class StyledPage(content.Item):
+    zope.interface.implements(IStyledPageSchema)
+
+    body = None
+    styles = None
 
 
 class View(grok.View):

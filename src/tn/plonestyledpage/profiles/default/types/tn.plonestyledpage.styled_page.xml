@@ -15,7 +15,7 @@
   <property name="allowed_content_types" />
 
   <property name="schema">tn.plonestyledpage.styled_page.IStyledPageSchema</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="klass">tn.plonestyledpage.styled_page.StyledPage</property>
   <property name="add_permission">cmf.AddPortalContent</property>
 
   <property name="behaviors">
