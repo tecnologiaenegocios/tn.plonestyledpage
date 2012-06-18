@@ -3,7 +3,9 @@ from five import grok
 from plone.app.textfield import RichText
 from plone.directives import form
 from tn.plonestyledpage import _
+from tn.ploneformwidget.sourcecode import SourceCodeFieldWidget
 from zope.keyreference.interfaces import IKeyReference
+from z3c.form import widget
 
 import cssutils
 import zope.schema
@@ -42,6 +44,7 @@ class IStyledPageSchema(form.Schema):
         description=_(u'The contents of the page'),
     )
 
+    form.widget(styles=SourceCodeFieldWidget)
     styles = zope.schema.SourceText(
         title=_(u'Page styles'),
         description=_(u'Additional styles for this page.'),
@@ -57,3 +60,8 @@ class View(grok.View):
 
     def styles(self):
         return getEscapedStyleBlock(self.context)
+
+
+# This adapter is registered in ZCML under the name 'editor_mode'.
+mode_adapter = widget.StaticWidgetAttribute(u'css',
+                                            field=IStyledPageSchema['styles'])

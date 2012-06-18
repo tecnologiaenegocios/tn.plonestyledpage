@@ -27,4 +27,6 @@
       directory="resources"
       />
 
+  <adapter factory=".styled_page.mode_adapter" name="editor_mode" />
+
 </configure>

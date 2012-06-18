@@ -26,6 +26,7 @@ setup(
         'plone.directives.form',
         'lxml',
         'cssutils',
+        'tn.ploneformwidget.sourcecode',
     ],
     extras_require={
         'test': [
