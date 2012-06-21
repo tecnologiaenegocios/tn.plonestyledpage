@@ -22,6 +22,16 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:upgradeStep
+      title="Change class of styled pages"
+      description="Styled pages previously used default Item class from Dexterity, now it has a customized class"
+      source="1"
+      destination="2"
+      handler="tn.plonestyledpage.upgrade.change_styled_page_class_to_custom_class"
+      sortkey="1"
+      profile="tn.plonestyledpage:default"
+      />
+
   <browser:resourceDirectory
       name="tn.plonestyledpage"
       directory="resources"
