@@ -3,6 +3,7 @@ from five import grok
 from plone.app.textfield import RichText
 from plone.dexterity import content
 from plone.directives import form
+from plone.supermodel import model
 from tn.plonestyledpage import _
 from tn.ploneformwidget.sourcecode import SourceCodeFieldWidget
 from zope.keyreference.interfaces import IKeyReference
@@ -17,9 +18,11 @@ def getStyleBlock(page):
     cdata_block = u"/*<![CDATA[*/%s/*]]>*/" % (page.styles or u'')
     return u'<style type="text/css" media="all">%s</style>' % cdata_block
 
+
 def getEscapedStyleBlock(page):
     cdata_block = u"/*<![CDATA[*/%s/*]]>*/" % getEscapedStyles(page)
     return u'<style type="text/css" media="all">%s</style>' % cdata_block
+
 
 def getEscapedStyles(page):
     if not page.styles:
@@ -35,11 +38,12 @@ def getEscapedStyles(page):
             }
     return css.cssText
 
+
 def getUniqueId(page):
     return 'page' + str(hash(IKeyReference(page)))
 
 
-class IStyledPageSchema(form.Schema):
+class IStyledPageSchema(model.Schema):
 
     body = RichText(
         title=_(u'Page body'),
