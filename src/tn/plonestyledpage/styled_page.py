@@ -57,12 +57,22 @@ class IStyledPageSchema(model.Schema):
         required=False
     )
 
+    def transform_body():
+        """Return the body output relative to the context.
+
+        In other words, just use this method instead of body.output for the
+        common cases.
+        """
+
 
 class StyledPage(content.Item):
     zope.interface.implements(IStyledPageSchema)
 
     body = None
     styles = None
+
+    def transform_body(self):
+        return self.body.output_relative_to(self)
 
 
 class View(grok.View):

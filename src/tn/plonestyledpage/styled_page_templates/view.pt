@@ -15,7 +15,7 @@
 <metal:block fill-slot="content-core">
   <div
       tal:attributes="id view/id"
-      tal:content="structure context/body/output"
+      tal:content="structure context/transform_body"
       />
 </metal:block>
 
